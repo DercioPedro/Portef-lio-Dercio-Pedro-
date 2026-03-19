@@ -5,28 +5,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dercio Pedro Luis · Dev Web</title>
-    <!-- Font Awesome 6 (gratuito) para ícones -->
+    <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Google Fonts (Inter moderna) -->
+    <!-- Google Fonts Inter -->
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap"
         rel="stylesheet">
-
         <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
     <button id="back-to-top" aria-label="Voltar ao topo"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- MODAL DE AGRADECIMENTO -->
+    <div class="modal" id="thankYouModal">
+        <div class="modal-content">
+            <div class="modal-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h2>Obrigado!</h2>
+            <p>
+                Sua mensagem foi enviada com sucesso!<br>
+                <strong>Dercio Pedro Luis</strong> irá responder o mais rápido possível.
+            </p>
+            <button onclick="fecharModal()" class="btn btn-primary">
+                <i class="fas fa-home" style="margin-right: 10px;"></i>
+                Voltar para o início
+            </button>
+        </div>
+    </div>
+
     <div class="container">
-        <!-- cabeçalho simples -->
         <header>
             <div class="logo">Dercio.dev</div>
             <div class="nav-actions">
                 <a href="#projetos">Projetos</a>
                 <a href="#habilidades">Skills</a>
                 <a href="#contato">Contato</a>
-                <button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i> <span>Escuro</span></button>
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i> <span>Escuro</span>
+                </button>
             </div>
         </header>
 
@@ -58,7 +76,7 @@
                     <div class="skills-mini">
                         <span class="skill-badge">HTML5</span>
                         <span class="skill-badge">CSS3</span>
-                        <span class="skill-badge">JavaScript (ES6+)</span>
+                        <span class="skill-badge">JavaScript</span>
                         <span class="skill-badge">React</span>
                         <span class="skill-badge">Next.js</span>
                         <span class="skill-badge">Node.js</span>
@@ -67,7 +85,7 @@
                     </div>
                 </div>
                 <div class="sobre-avatar">
-                    <img src="https://via.placeholder.com/400x400/1e293b/ffffff?text=D.P.L." alt="Dercio avatar"
+                    <img src="IMG-20260312-WA0008[1].jpg" alt="Dercio avatar"
                         class="avatar-sobre-img">
                 </div>
             </div>
@@ -77,13 +95,13 @@
         <section id="projetos" class="fade-scroll">
             <h2 class="section-title">Projetos em destaque</h2>
             <div class="projetos-grid">
-                <!-- card 1 - placeholder (você fará upload depois) -->
                 <div class="projeto-card">
                     <div class="projeto-img img1">📸 Em breve</div>
-                    <h3>Saude Nampula</h3>
-                    <p class="projeto-desc">Uma plataforma que reune as imformacoes de todas a farmacias, centros de saude e hospitais da cidade de nampula <br> com possibilidades de ver remedios disponiveis, horarios de funcionamento e localizacao.</p>
+                    <h3>Saude Nmapula</h3>
+                    <p class="projeto-desc">Uma plataforma que reune as imformacoes de todas a farmacias, centros de saude e hospitais da cidade de nampula <br> com
+                    possibilidades de ver remedios disponiveis, horarios de funcionamento e localizacao</p>
                     <div class="projeto-tech">
-                        <span class="tech-tag">Javascript</span>
+                        <span class="tech-tag">React</span>
                         <span class="tech-tag">Node</span>
                         <span class="tech-tag">MongoDB</span>
                     </div>
@@ -114,7 +132,7 @@
             </div>
         </section>
 
-        <!-- HABILIDADES (barras visuais) -->
+        <!-- HABILIDADES -->
         <section id="habilidades" class="fade-scroll">
             <h2 class="section-title">Habilidades técnicas</h2>
             <div class="skills-detalhadas">
@@ -180,31 +198,20 @@
             <h2 class="section-title">Vamos conversar</h2>
             <div class="contato-grid">
                 <div class="contato-form">
-                    <!-- Formulário com FormSubmit - envia para seu email -->
-                    <form id="contactForm" action="https://formsubmit.co/derciop66@gmail.com" method="POST">
-                        <!-- Desabilitar captcha (opcional) -->
-                        <input type="hidden" name="_captcha" value="false">
-                        <!-- Redirecionar para a mesma página após envio -->
-                        <input type="hidden" name="_next" value="https://derciopedro.dev/obrigado">
-                        <!-- Campo escondido para subject personalizado -->
-                        <input type="hidden" name="_subject" value="Nova mensagem do seu portfólio!">
-
+                    <form id="contactForm">
                         <div class="form-group">
-                            <input type="text" name="nome" placeholder="Seu nome" required>
+                            <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" name="email" placeholder="Seu e-mail" required>
+                            <input type="email" id="email" name="email" placeholder="Seu e-mail" required>
                         </div>
                         <div class="form-group">
-                            <textarea name="mensagem" rows="5" placeholder="Sua mensagem" required></textarea>
+                            <textarea id="mensagem" name="mensagem" rows="5" placeholder="Sua mensagem"
+                                required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary" style="border:none; width:100%;">Enviar
-                            mensagem</button>
-
-                        <!-- Mensagem de sucesso (opcional, para feedback) -->
-                        <div class="form-success" id="formSuccess">
-                            Mensagem enviada com sucesso! Obrigado pelo contato.
-                        </div>
+                        <button type="submit" class="btn btn-primary" style="border:none; width:100%;" id="submitBtn">
+                            Enviar mensagem
+                        </button>
                     </form>
                 </div>
                 <div class="contato-redes">
@@ -225,7 +232,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2026 Dercio Pedro Luis – Desenvolvedor web. Todos os direitos reservados.</p>
+        <p>© 2025 Dercio Pedro Luis – Desenvolvedor web. Todos os direitos reservados.</p>
     </footer>
 
     <script src="index.js"></script>

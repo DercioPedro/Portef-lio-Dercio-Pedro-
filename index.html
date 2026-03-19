@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dercio Pedro Luis · Dev Web</title>
+    <!-- Font Awesome 6 (gratuito) para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts (Inter moderna) -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap"
+        rel="stylesheet">
+
+        <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <button id="back-to-top" aria-label="Voltar ao topo"><i class="fas fa-arrow-up"></i></button>
+    <div class="container">
+        <!-- cabeçalho simples -->
+        <header>
+            <div class="logo">Dercio.dev</div>
+            <div class="nav-actions">
+                <a href="#projetos">Projetos</a>
+                <a href="#habilidades">Skills</a>
+                <a href="#contato">Contato</a>
+                <button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i> <span>Escuro</span></button>
+            </div>
+        </header>
+
+        <!-- HERO -->
+        <section class="hero fade-scroll">
+            <div class="hero-content">
+                <h1>Dercio Pedro Luis <span class="hero-highlight">Desenvolvedor Web</span></h1>
+                <div class="hero-sub">Criando experiências digitais rápidas e elegantes.</div>
+                <div class="hero-buttons">
+                    <a href="#projetos" class="btn btn-primary">Ver projetos</a>
+                    <a href="#contato" class="btn btn-outline">Contato</a>
+                </div>
+            </div>
+            <div class="hero-avatar">
+                <div class="avatar-frame">
+                    <img src="https://via.placeholder.com/300x300/2563eb/ffffff?text=DPL" alt="Avatar Dercio">
+                </div>
+            </div>
+        </section>
+
+        <!-- SOBRE MIM -->
+        <section class="fade-scroll">
+            <h2 class="section-title">Sobre mim</h2>
+            <div class="sobre-grid">
+                <div class="sobre-texto">
+                    <p>Olá! Sou Dercio Pedro Luis, desenvolvedor front-end com paixão por criar interfaces modernas e
+                        performáticas. Trabalho lado a lado com design para transformar ideias em código de qualidade.
+                        Entusiasta de React, UX e inovações web.</p>
+                    <div class="skills-mini">
+                        <span class="skill-badge">HTML5</span>
+                        <span class="skill-badge">CSS3</span>
+                        <span class="skill-badge">JavaScript (ES6+)</span>
+                        <span class="skill-badge">React</span>
+                        <span class="skill-badge">Next.js</span>
+                        <span class="skill-badge">Node.js</span>
+                        <span class="skill-badge">TypeScript</span>
+                        <span class="skill-badge">Tailwind</span>
+                    </div>
+                </div>
+                <div class="sobre-avatar">
+                    <img src="https://via.placeholder.com/400x400/1e293b/ffffff?text=D.P.L." alt="Dercio avatar"
+                        class="avatar-sobre-img">
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJETOS -->
+        <section id="projetos" class="fade-scroll">
+            <h2 class="section-title">Projetos em destaque</h2>
+            <div class="projetos-grid">
+                <!-- card 1 - placeholder (você fará upload depois) -->
+                <div class="projeto-card">
+                    <div class="projeto-img img1">📸 Em breve</div>
+                    <h3>Saude Nampula</h3>
+                    <p class="projeto-desc">Uma plataforma que reune as imformacoes de todas a farmacias, centros de saude e hospitais da cidade de nampula <br> com possibilidades de ver remedios disponiveis, horarios de funcionamento e localizacao.</p>
+                    <div class="projeto-tech">
+                        <span class="tech-tag">Javascript</span>
+                        <span class="tech-tag">Node</span>
+                        <span class="tech-tag">MongoDB</span>
+                    </div>
+                    <a href="https://derciopedro.github.io/Saude-nampula/" class="projeto-link">Ver projeto <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="projeto-card">
+                    <div class="projeto-img img2">🎨 Em breve</div>
+                    <h3>Meu Projeto 2</h3>
+                    <p class="projeto-desc">Descrição do projeto será adicionada em breve.</p>
+                    <div class="projeto-tech">
+                        <span class="tech-tag">Next.js</span>
+                        <span class="tech-tag">Prisma</span>
+                        <span class="tech-tag">Tailwind</span>
+                    </div>
+                    <a href="#" class="projeto-link">Ver projeto <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="projeto-card">
+                    <div class="projeto-img img3">🛒 Em breve</div>
+                    <h3>Meu Projeto 3</h3>
+                    <p class="projeto-desc">Descrição do projeto será adicionada em breve.</p>
+                    <div class="projeto-tech">
+                        <span class="tech-tag">Vue.js</span>
+                        <span class="tech-tag">Node</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                    </div>
+                    <a href="#" class="projeto-link">Ver projeto <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- HABILIDADES (barras visuais) -->
+        <section id="habilidades" class="fade-scroll">
+            <h2 class="section-title">Habilidades técnicas</h2>
+            <div class="skills-detalhadas">
+                <div class="skill-categoria">
+                    <h3>Frontend</h3>
+                    <div class="skill-item">
+                        <div class="skill-info"><span>HTML & CSS</span><span>95%</span></div>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar-fill" style="width:95%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span>JavaScript</span><span>90%</span></div>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar-fill" style="width:90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span>React</span><span>88%</span></div>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar-fill" style="width:88%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span>UI / UX</span><span>80%</span></div>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar-fill" style="width:80%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-categoria">
+                    <h3>Backend & Outros</h3>
+                    <div class="skill-item">
+                        <div class="skill-info"><span>Node.js</span><span>75%</span></div>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar-fill" style="width:75%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span>TypeScript</span><span>85%</span></div>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar-fill" style="width:85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span>Git & Github</span><span>90%</span></div>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar-fill" style="width:90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span>SQL/NoSQL</span><span>70%</span></div>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar-fill" style="width:70%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTATO -->
+        <section id="contato" class="fade-scroll">
+            <h2 class="section-title">Vamos conversar</h2>
+            <div class="contato-grid">
+                <div class="contato-form">
+                    <!-- Formulário com FormSubmit - envia para seu email -->
+                    <form id="contactForm" action="https://formsubmit.co/derciop66@gmail.com" method="POST">
+                        <!-- Desabilitar captcha (opcional) -->
+                        <input type="hidden" name="_captcha" value="false">
+                        <!-- Redirecionar para a mesma página após envio -->
+                        <input type="hidden" name="_next" value="https://derciopedro.dev/obrigado">
+                        <!-- Campo escondido para subject personalizado -->
+                        <input type="hidden" name="_subject" value="Nova mensagem do seu portfólio!">
+
+                        <div class="form-group">
+                            <input type="text" name="nome" placeholder="Seu nome" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Seu e-mail" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="mensagem" rows="5" placeholder="Sua mensagem" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="border:none; width:100%;">Enviar
+                            mensagem</button>
+
+                        <!-- Mensagem de sucesso (opcional, para feedback) -->
+                        <div class="form-success" id="formSuccess">
+                            Mensagem enviada com sucesso! Obrigado pelo contato.
+                        </div>
+                    </form>
+                </div>
+                <div class="contato-redes">
+                    <h3>Redes sociais</h3>
+                    <div class="redes-links">
+                        <a href="https://github.com/DercioPedro" target="_blank" aria-label="GitHub"><i
+                                class="fab fa-github"></i></a>
+                        <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank" aria-label="X / Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                    <div class="info-contato"><i class="fas fa-envelope"></i> derciop66@gmail.com</div>
+                    <div class="info-contato"><i class="fas fa-phone-alt"></i> +258 85 681 6986</div>
+                    <div class="info-contato"><i class="fab fa-github"></i> DercioPedro</div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Dercio Pedro Luis – Desenvolvedor web. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+
+</html>

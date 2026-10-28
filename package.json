@@ -1,0 +1,11 @@
+{
+  "name": "dercio-portfolio",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Portfólio profissional de Dercio Pedro Luis com painel admin",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "node backend/server.js",
+    "install:all": "npm install --prefix backend"
+  }
+}

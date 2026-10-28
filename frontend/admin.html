@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel · Dercio.dev</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+  <div id="loginView" class="login-wrap">
+    <form class="login-card" id="loginForm">
+      <div class="brand">Dercio<span style="color:#38bdf8">.dev</span></div>
+      <h1>Painel privado</h1>
+      <p>Entra para gerir projectos, mensagens e o teu portfólio.</p>
+      <div class="field">
+        <label>Utilizador</label>
+        <input name="username" autocomplete="username" required>
+      </div>
+      <div class="field">
+        <label>Palavra-passe</label>
+        <input type="password" name="password" autocomplete="current-password" required>
+      </div>
+      <div class="error" id="loginError"></div>
+      <button class="btn btn-primary" type="submit">Entrar</button>
+    </form>
+  </div>
+
+  <div id="appView" class="app hidden">
+    <aside class="sidebar">
+      <div class="brand">Painel Dercio</div>
+      <button class="nav-btn active" data-tab="dash">Resumo</button>
+      <button class="nav-btn" data-tab="projects">Projectos</button>
+      <button class="nav-btn" data-tab="skills">Skills</button>
+      <button class="nav-btn" data-tab="services">Serviços</button>
+      <button class="nav-btn" data-tab="experience">Percurso</button>
+      <button class="nav-btn" data-tab="messages">Mensagens</button>
+      <button class="nav-btn" data-tab="profile">Perfil</button>
+      <button class="nav-btn" id="logoutBtn">Sair</button>
+    </aside>
+    <main class="main">
+      <div class="topbar">
+        <h2 id="pageTitle">Resumo</h2>
+        <a class="btn btn-ghost" href="/" target="_blank">Ver site</a>
+      </div>
+
+      <section id="tab-dash">
+        <div class="stats" id="stats"></div>
+        <div class="panel" id="recentMessages"></div>
+      </section>
+
+      <section id="tab-projects" class="hidden">
+        <div class="panel">
+          <h3>Novo projecto</h3>
+          <form id="projectForm">
+            <div class="grid-2">
+              <div class="field"><label>Título</label><input name="title" required></div>
+              <div class="field"><label>Tecnologias (vírgulas)</label><input name="tech" placeholder="React, Node, MongoDB"></div>
+            </div>
+            <div class="field"><label>Descrição</label><textarea name="description"></textarea></div>
+            <div class="grid-2">
+              <div class="field"><label>URL do site</label><input name="liveUrl"></div>
+              <div class="field"><label>URL do código</label><input name="repoUrl"></div>
+            </div>
+            <div class="field"><label>Imagem</label><input type="file" id="projectImage" accept="image/*"></div>
+            <label><input type="checkbox" name="published" checked> Publicado</label>
+            <label><input type="checkbox" name="featured"> Destaque</label>
+            <button class="btn btn-primary" type="submit">Guardar projecto</button>
+          </form>
+        </div>
+        <div class="panel" id="projectsList" style="margin-top:16px"></div>
+      </section>
+
+      <section id="tab-skills" class="hidden">
+        <div class="panel">
+          <form id="skillForm" class="grid-2">
+            <div class="field"><label>Nome</label><input name="name" required></div>
+            <div class="field"><label>Nível (0-100)</label><input type="number" name="level" min="0" max="100" value="80"></div>
+            <div class="field"><label>Categoria</label><input name="category" value="Frontend"></div>
+            <button class="btn btn-primary" type="submit">Adicionar skill</button>
+          </form>
+        </div>
+        <div class="panel" id="skillsList" style="margin-top:16px"></div>
+      </section>
+
+      <section id="tab-services" class="hidden">
+        <div class="panel">
+          <form id="serviceForm">
+            <div class="grid-2">
+              <div class="field"><label>Título</label><input name="title" required></div>
+              <div class="field"><label>Ícone Font Awesome</label><input name="icon" placeholder="fa-code"></div>
+            </div>
+            <div class="field"><label>Descrição</label><textarea name="description"></textarea></div>
+            <button class="btn btn-primary" type="submit">Adicionar serviço</button>
+          </form>
+        </div>
+        <div class="panel" id="servicesList" style="margin-top:16px"></div>
+      </section>
+
+      <section id="tab-experience" class="hidden">
+        <div class="panel">
+          <form id="expForm">
+            <div class="grid-2">
+              <div class="field"><label>Ano</label><input name="year" placeholder="2024 — Agora"></div>
+              <div class="field"><label>Título</label><input name="title"></div>
+            </div>
+            <div class="field"><label>Local</label><input name="place"></div>
+            <div class="field"><label>Descrição</label><textarea name="description"></textarea></div>
+            <button class="btn btn-primary" type="submit">Adicionar</button>
+          </form>
+        </div>
+        <div class="panel" id="expList" style="margin-top:16px"></div>
+      </section>
+
+      <section id="tab-messages" class="hidden">
+        <div class="panel" id="messagesList"></div>
+      </section>
+
+      <section id="tab-profile" class="hidden">
+        <div class="panel">
+          <form id="profileForm">
+            <div class="grid-2">
+              <div class="field"><label>Nome</label><input name="name"></div>
+              <div class="field"><label>Título</label><input name="title"></div>
+            </div>
+            <div class="field"><label>Tagline</label><input name="tagline"></div>
+            <div class="field"><label>Bio</label><textarea name="bio"></textarea></div>
+            <div class="grid-2">
+              <div class="field"><label>E-mail</label><input name="email"></div>
+              <div class="field"><label>Telefone</label><input name="phone"></div>
+              <div class="field"><label>Localização</label><input name="location"></div>
+              <div class="field"><label>GitHub</label><input name="github"></div>
+              <div class="field"><label>LinkedIn</label><input name="linkedin"></div>
+              <div class="field"><label>Instagram</label><input name="instagram"></div>
+              <div class="field"><label>WhatsApp URL</label><input name="whatsapp"></div>
+            </div>
+            <label><input type="checkbox" name="available"> Disponível para projectos</label>
+            <div class="field"><label>Foto de perfil</label><input type="file" id="avatarFile" accept="image/*"></div>
+            <button class="btn btn-primary" type="submit">Guardar perfil</button>
+          </form>
+        </div>
+        <div class="panel" style="margin-top:16px">
+          <h3>Alterar palavra-passe</h3>
+          <form id="passForm">
+            <div class="field"><label>Actual</label><input type="password" name="currentPassword" required></div>
+            <div class="field"><label>Nova</label><input type="password" name="newPassword" required></div>
+            <button class="btn btn-primary" type="submit">Actualizar</button>
+          </form>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="/js/admin.js"></script>
+</body>
+</html>
